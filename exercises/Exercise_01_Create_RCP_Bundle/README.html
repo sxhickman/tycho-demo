@@ -28,8 +28,11 @@
 			<li>On the <tt>Content</tt> page, enter the name <tt>Tycho Demo Bundle</tt>. Click <tt>Next &gt;</tt>
 				<br /><img src="resources/new_e4_app_2.png" />
 			</li>
-			<li>On the <tt>Eclipse 4 Application</tt> page, select <tt>Create sample content</tt> and press <tt>Finish</tt>
+			<li>On the <tt>Templates</tt> page, select <tt>Eclipse 4 RCP application</tt>. Click <tt>Next &gt;</tt>
 				<br /><img src="resources/new_e4_app_3.png" />
+			</li>
+			<li>On the <tt>Basic Eclipse 4 Application</tt> page, select <tt>Create sample content</tt> and press <tt>Finish</tt>
+				<br /><img src="resources/new_e4_app_4.png" />
 			</li>
 		</ul></li>
 		<li>Run the generated application to see what it does: <ul>
@@ -64,7 +67,7 @@
 		<li><a name="convert_to_maven" />Right-click on the <tt>tychodemo.bundle</tt> project and select <tt>Configure > Convert to Maven Project</tt>
 			<br /><img src="resources/convert_to_maven_1.png" />
 		</li>
-		<li>Enter the groupId <tt>tychodemo</tt>, the version <tt>1.0.0-SNAPSHOT</tt>, and the packaging <tt>eclipse-plugin</tt>
+		<li>Enter the groupId <tt>tychodemo</tt>, the version <tt>1.0.0-SNAPSHOT</tt>, and the packaging <tt>eclipse-plugin</tt> and  press <tt>Finish</tt>.
 			<br /><img src="resources/convert_to_maven_2.png" />
 			<br />Note: Tycho requires that the <tt>artifactId</tt> in the POM is the same as the <tt>Bundle-SymbolicName</tt> in the OSGi manifest, and that the versions match (with <tt>.qualifier</tt> replaced by <tt>-SNAPSHOT</tt>)
 		</li>
@@ -76,7 +79,7 @@
 		<li>Open the <tt>pom.xml</tt> and switch to the tab <tt>pom.xml</tt></li>
 		<li>Define a property with the Tycho version by adding this snippet to the <tt>&lt;project&gt;</tt> : <pre>
   &lt;properties&gt;
-    &lt;tycho-version&gt;0.20.0&lt;/tycho-version&gt;
+    &lt;tycho-version&gt;1.3.0&lt;/tycho-version&gt;
   &lt;/properties&gt;</pre>
 		</li>
 		<li>To enable Tycho, add this snippet to the <tt>&lt;project&gt;</tt> : <pre>
@@ -113,19 +116,13 @@
   &lt;repositories&gt;
     &lt;!-- configure p2 repository to resolve against --&gt;
     &lt;repository&gt;
-      &lt;id&gt;eclipse-project-luna&lt;/id&gt;
+      &lt;id&gt;eclipse-project-2018-12&lt;/id&gt;
       &lt;layout&gt;p2&lt;/layout&gt;
-      &lt;url&gt;http://download.eclipse.org/eclipse/updates/4.4milestones&lt;/url&gt;
+      &lt;url&gt;http://download.eclipse.org/eclipse/updates/4.10&lt;/url&gt;
     &lt;/repository&gt;
   &lt;/repositories&gt;</pre>
 			</li>
-			<li>In order to be independent of network access to eclipse.org:<ul>
-				<li>Open <tt>~/.m2/settings.xml</tt> (Linux/Mac) or <tt>%USERPROFILE%/.m2/settings.xml</tt> (Windows)</li>
-				<li>Replace the mirror URL <tt>file:/TODO/path/to/tutorial/p2_repository</tt> with a real <tt>file:</tt> URL pointing to your
-					<a href="../../p2_repository">local copy of the p2 repository from the USB stick</a>
-				</li></ul>
-				<br />This p2 repository contains a subset of the Eclipse Project Luna M6 repository.
-			</li></ul>
+         </ul>
 		</li>
 
 		<li>Run the build of <tt>tychodemo.parent</tt> again, e.g. by right-clicking on <tt>tychodemo.parent > Run As > Maven build</tt>
