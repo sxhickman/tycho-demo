@@ -27,7 +27,8 @@
 			<br /><img src="../resources/import.png" />
 			<br /><img src="../resources/import_2.png" />
 		</li>
-		<li>Right-click on <tt>tychodemo.parent > Run As > Maven build</tt>, enter the goals <tt>clean install</tt>.
+      If you see a dialog labeled <tt>Setup Maven plugin connectors</tt> click <tt>Finish</tt>. If you see an <tt>Install</tt> dialog asking you to install <tt>Tycho Projector Configurators</tt>, do so. 
+		<li>Right-click on <tt>tychodemo.parent > Run As > Maven build</tt>. If you get a dialog asking for goals, enter the goals <tt>clean install</tt>.
 			<br />The build should succeed and build two modules:
 			<br /><img src="../resources/build_success.png" />
 		</li>
@@ -60,7 +61,7 @@
 			<li>Open <tt>AboutHandler.java</tt>, select the about text string, right-click <tt>Refactor > Extract Method</tt>
 				<br /><img src="../resources/extract_method.png" />
 			</li>
-			<li>Enter the method name <tt>getGreeting</tt> and select the <tt>default</tt> access modifier
+			<li>Enter the method name <tt>getGreeting</tt> and select the <tt>package</tt> access modifier
 				<br /><img src="../resources/extract_method_2.png" />
 			</li>
 		</ul></li>
@@ -112,7 +113,8 @@
 			</ul>
 			Expected results: <ul>
 				<li>You may get an error "Project configuration is not up to date".
-					If this is the case, right-click on <tt>tychodemo.bundle.tests > Maven > Update Project...</tt>, select the project and click <tt>OK</tt>
+					If this is the case, right-click on <tt>tychodemo.bundle.tests > Maven > Update Project...</tt>, select the project. If you see a message 
+               asking if you should include other projects that need to be updated, click the link in the message to include it/them. Then click <tt>OK</tt>
 				</li>
 				<li>The <tt>tychodemo.bundle.tests</tt> project is now listed as module in the parent POM.
 					(This means that it will be included in the build reactor when triggering a build on the parent POM.)
@@ -132,7 +134,8 @@
 		<li>Implement the test and run it again: <ul>
 			<li>Assert that <tt>getGreeting()</tt> contains <tt>"Tycho Demo"</tt>
 				<br /><img src="../resources/test_impl.png" />
-				<br />(<a href="../../Exercise_03_Add_Feature/tychodemo.bundle.tests/src/tychodemo/bundle/handlers/AboutHandlerTest.java">Possible solution</a>)
+				<br />(<a href="../../Exercise_03_Add_Feature/tychodemo.bundle.tests/src/tychodemo/bundle/handlers/AboutHandlerTest.java">Possible solution</a>). If you use this possible
+            solution, you may see an error that CoreMatchers cannot be resolved. If so, select <tt>Import 'CoreMatchers' (org.hamcrest)</tt> from the list of Content Assist choices.
 			</li>
 			<li>Execute the test in Eclipse, e.g. by selecting the <tt>AboutHandlerTest</tt> launch configuration from the launch history
 				<br /><img src="../resources/launch_history.png" />

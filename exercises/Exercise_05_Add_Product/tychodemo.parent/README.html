@@ -44,16 +44,11 @@
 		<li>Configure the start levels and auto-start settings of the product: <ul>
 			<li>Open the <tt>tychodemo.bundle.product</tt> product definition</li>
 			<li>Switch to the <tt>Configuration</tt> tab</li>
-			<li>In the <tt>Start Levels</tt> section, click on <tt>Add...</tt>
+			<li>In the <tt>Start Levels</tt> section, click on <tt>Add Recommended...</tt>
 				<br /><img src="../resources/start_levels_add.png" />
 			</li>
-			<li>Select the bundles <tt>org.eclipse.equinox.common</tt> and <tt>org.eclipse.equinox.ds</tt> and hit <tt>OK</tt>
-				<br /><img src="../resources/start_levels_add_equinox.png" />
-			</li>
-			<li>For both bundles, set the start level to <tt>2</tt> and auto-start to <tt>true</tt></li>
-			<li>Click <tt>Add...</tt> again and add the bundle <tt>org.eclipse.core.runtime</tt></li>
-			<li>For <tt>org.eclipse.core.runtime</tt> only set auto-start to <tt>true</tt>
-				<br /><img src="../resources/start_levels.png" />
+			<li>You will see a dialog with a list of recommended start levels for some plug-ins similar to the following. Click <tt>OK</tt>.
+				<br /><img src="../resources/start_levels_add_recommended.png" />
 			</li>
 		</ul></li>
 
@@ -65,7 +60,7 @@
 				<li>Select "The product configuration is based on <tt>features</tt>"
 					<br /><img src="../resources/feature_based.png" />
 				</li>
-				<li>On the <tt>Dependencies</tt> tab, click on <tt>Add...</tt> and select the <tt>tychodemo.feature</tt>, and hit <tt>OK</tt></li> 
+				<li>On the <tt>Contents</tt> tab, click on <tt>Add...</tt> and select the <tt>tychodemo.feature</tt>, and hit <tt>OK</tt></li> 
 				<li>In the same way, add the feature <tt>org.eclipse.rcp</tt>
 					<br /><img src="../resources/feature_add_rcp.png" />
 				</li>

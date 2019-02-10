@@ -15,6 +15,15 @@
 
    <windowImages/>
 
+   <launcher>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
    <plugins>
       <plugin id="com.ibm.icu"/>
       <plugin id="javax.annotation"/>
@@ -110,16 +119,18 @@
 
    <features>
       <feature id="tychodemo.feature" version="1.0.0.qualifier"/>
-      <feature id="org.eclipse.rcp" version="4.4.0.v20140306-1200"/>
+      <feature id="org.eclipse.rcp"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.e4.rcp"/>
       <feature id="org.eclipse.emf.common"/>
    </features>
 
    <configurations>
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
    </configurations>
 
 </product>
